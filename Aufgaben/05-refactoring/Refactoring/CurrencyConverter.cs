@@ -11,18 +11,22 @@ public class CurrencyConverter
 
     public double ConvertTo(double amount)
     {
-        switch (ToCurrency)
+        if(ToCurrency.Equals("USD"))
         {
-            case "USD":
-                return amount * 1.09;
-            case "EUR":
-                return amount * 0.96;
-            case "GBP":
-                return amount * 0.82;
-            case "RUB":
-                return amount * 79.78;
-            default:
-                throw new ArgumentException($"no exchange rate for {ToCurrency} available");
+            return amount * 1.09;
+        } 
+        else if(ToCurrency.Equals("EUR"))
+        {
+            return amount * 0.96;
         }
+        else if(ToCurrency.Equals("GBP"))
+        {
+            return amount * 0.82;
+        }
+        else if(ToCurrency.Equals("RUB"))
+        {
+            return amount * 79.78;
+        }
+        throw new ArgumentException($"no exchange rate for {ToCurrency} available");
     }
 }

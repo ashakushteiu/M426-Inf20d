@@ -2,16 +2,16 @@ namespace Refactoring;
 
 public class Fibonacci
 {
-    public static int Fib(int n)
+    public static int Fib(int number)
     {
-        if (n < 0)
+        int fib = 0;
+        for(int i = 1; number == i; i++)
         {
-            throw new ArgumentException("Fibonacci undefined for negative numbers");
+            fib = fib + i;
         }
-        if (n == 0 || n == 1)
-        {
-            return n;
+        if(fib == 0){
+            return 1;
         }
-        return Fib(n - 2) + Fib(n - 1);
+        return fib;
     }
 }

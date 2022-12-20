@@ -2,7 +2,7 @@ namespace Refactoring;
 
 public class Grading
 {
-    public static char GetLetterGrade(int grade)
+    public char GetLetterGrade(int grade)
     {
         switch (grade)
         {
